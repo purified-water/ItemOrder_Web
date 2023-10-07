@@ -1,0 +1,24 @@
+.header_color {
+    background: linear-gradient(to top, #7aa0ff 0%, #365eef 100%);
+}
+
+.nav_color {
+    background: linear-gradient(to bottom, #a2bcff 0%, #5d7ceb 100%);
+
+}
+
+.hidden_bar {
+    background-color: #f6ac62;
+}
+
+.expanded_bar {
+    background-color: #FF8207;
+}
+
+.footer {
+    background-color: #ea9744;
+}
+
+.selected_list_color {
+    background-color: rgb(152, 209, 231);
+}
