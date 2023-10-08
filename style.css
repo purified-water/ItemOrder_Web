@@ -16,13 +16,24 @@ body {
     width: 1200px;
     height: 100%;
     flex-wrap: wrap;
-    z-index: 1;
+    /* z-index: -100; */
 }
 .container {
     display: flex;
     width: fit-content;
     height: fit-content;
     justify-content: center;
+}
+.header_container {
+    display: flex;
+    justify-content: center;
+
+    width: fit-content;
+    height: fit-content;
+}
+
+.header_container >:nth-child(2) {
+    top: 5em;
 }
 
 .header {
@@ -46,28 +57,51 @@ body {
 }
 
 .nav {
-    height: 1.5em;
-    width: 600px;
+    height: 1.7em;
+    width: 500px;
     border-radius: 4px;
-    z-index: 20;
-    display: flex;
+
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
+    position: absolute;
+    padding-top: 3px;
+    padding-left: 8px;
+    padding-right: 8px;
+    box-shadow: 2px 2px 8px #8e8e8e;
+
 }
 
-ul {
+.nav .nav_list{
     list-style: none;
     padding: 0;
+    margin: 0;
     display: flex;
-    justify-content: space-between; /* Space the items evenly */
-    width: 100%; /* Ensure the ul takes up the full width of .nav */
+    justify-content: center;
+    
+    /* flex-flow: row wrap; */
+
+    justify-content: space-between; 
+
 }
 
-li {
-    font-size: 15px;
-    padding: 4px;
-    color: blue;
+.nav .nav_list li a{
+    text-decoration: none;
+    color: rgb(48, 120, 222);
 }
+
+.nav .nav_list li a:hover{
+    /* padding: 4px; */
+    color: rgb(254, 225, 171);
+    text-shadow: -1px -1px 2px orange;
+}
+
+.nav .nav_list li a:active{
+    /* padding: 4px; */
+    color: rgb(254, 225, 171);
+    text-shadow: -1px -1px 2px orange;
+}
+
 
 
 
@@ -114,6 +148,7 @@ li {
 .news_data {
     font-size: 14px;
     padding: 5px;
+    color: #5f78d8;
     font-family: 'Times New Roman', Times, serif;
     border: 1px solid silver;
     border-radius: 0 0 4px 4px;
@@ -394,7 +429,7 @@ td:nth-child(2), td:nth-child(4) {
 }
 
 .footer_container {
-    border-top: 1px solid blue;
+    border-top: 1px solid rgb(98, 137, 255);
     width: 100%;
 }
 
@@ -407,7 +442,7 @@ td:nth-child(2), td:nth-child(4) {
     border-radius: 4px;
     border: 1px solid orange;
     color: orange;
-    box-shadow: 1px 1px 6px #313131;
+    box-shadow: 1px 1px 6px #585858;
     margin-top: 20px;
 
 }
@@ -416,7 +451,7 @@ td:nth-child(2), td:nth-child(4) {
 ul.horizontal_list {
     list-style-type: none;
     padding: 0;
-    margin-left: 10px;
+    margin-left: 20px;
 }
 
 
@@ -432,8 +467,24 @@ ul.horizontal_list li {
 
 ul.horizontal_list li:not(:last-child)::after {
     content: "|";
-    margin-left: 10px;
+    margin-left: 20px;
+    /* padding-right: 5px; */
     text-decoration: none;
+}
+
+ul.horizontal_list li a {
+    color: orange;
+
+}
+ul.horizontal_list li a:hover{
+    color: rgb(255, 233, 193);
+    background-color: orange;
+
+}
+ul.horizontal_list li a:active{
+    color: rgb(255, 233, 193);
+    background-color: orange;
+
 }
 
 
