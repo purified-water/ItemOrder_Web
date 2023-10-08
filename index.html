@@ -26,8 +26,46 @@
             </ul>    
         </div>
          -->
-        <div class="side nav_color">
-            this is side
+        <div class="side">
+            <div class="side_item">
+                <div class="side_item_header expanded expanded_bar">
+                    <div>⬇</div>
+                    <div class="news_title">NEWS 1</div>
+                    <div>↕</div>
+                </div>
+                <div class="news_data">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                </div>
+            </div>
+
+            <div class="side_item">
+                <div class="side_item_header hidden_bar">
+                    <div>▶</div>
+                    <div class="news_title">NEWS 2</div>
+                    <div>↕</div>
+                </div>
+            </div>
+
+            <div class="side_item">
+                <div class="side_item_header expanded expanded_bar">
+                    <div>⬇</div>
+                    <div class="news_title">NEWS 3</div>
+                    <div>↕</div>
+                </div>
+                <div class="news_data">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                </div>
+            </div>
+
+            <div class="side_item">
+                <div class="side_item_header hidden_bar">
+                    <div>▶</div>
+                    <div class="news_title">NEWS 2</div>
+                    <div>↕</div>
+                </div>
+            </div>
+
+
         </div>
 
         <div class="main">
@@ -73,7 +111,10 @@
                 <div class="outer_list_container">
                     <div>Danh sách sản phẩm</div>
                     <div class="list_button_arrows">
-                        Buttons here
+                        <input type="button" id="add" value=">">
+                        <input type="button" id="addAll" value=">>">
+                        <input type="button" id="putBack" value="<">
+                        <input type="button" id="putBackAll" value="<<">
                     </div>
                     
                     
@@ -119,7 +160,7 @@
     
                     </div>
 
-                    <div class="list_container">
+                    <div class="list_container_selected">
                         <div class="list_item">
                             <p>📱</p>
                             <p>Iphone 14 Pro Max 256GB</p>
@@ -133,7 +174,8 @@
                     </div>
 
                     <div>
-                        Main buttons here
+                        <input type="submit" id="signUp" value="Đăng ký">
+                        <input type="submit" id="deleteAll" value="Xóa hết">
                     </div>
                     
 
@@ -142,11 +184,11 @@
                 <div>
                     <table width="100%">
                         <tr class="expanded_bar">
-                            <th width="30%">Họ tên</td>
+                            <th width="28%">Họ tên</td>
                             <th width="10%">Giới tính</td>
-                            <th width="10%">Địa chỉ</td>
+                            <th width="14%">Địa chỉ</td>
                             <th width="10%">Ngày giao</td>
-                            <th width="30%">Sản phẩm</td>
+                            <th width="28%">Sản phẩm</td>
                         </tr>
                         <tr>
                             <td>Nguyễn Thị A</td>
@@ -181,7 +223,17 @@
         </div>
 
         <div class="footer footer_color">
-            this is footer
+            <div>Copyright © TuanNguyen</div>
+            <div padding-left="10px">
+                <ul class="horizontal_list">
+                    <li><a href="">Menu 1</a></li>
+                    <li><a href="">Menu 2</a></li>
+                    <li><a href="">Menu 3</a></li>
+                    <li><a href="">Menu 4</a></li>
+
+                </ul>
+            </div>
+            
         </div>
        
 
