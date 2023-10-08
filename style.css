@@ -89,6 +89,7 @@ li {
     align-items: center;
     padding: 5px;
     color: rgb(215, 196, 177);
+    background-color: #f6ac62;
 }   
 
 .news_data {
@@ -96,7 +97,7 @@ li {
     padding: 5px;
     font-family: 'Times New Roman', Times, serif;
     border: 1px solid silver;
-    border-radius: 4px;
+    border-radius: 0 0 4px 4px;
 }
 
 .news_title {
@@ -105,6 +106,7 @@ li {
 
 .expanded {
     color: rgb(249, 240, 209);
+    background-color: #FF8207;
 }
 
 
@@ -229,6 +231,34 @@ li {
 }
 
 .list_item p:nth-child(3) {
+    color: red;
+
+}
+
+.list_item_chose {
+    display: grid;
+    grid-template-columns: 15% 65% 20%;
+    grid-template-rows: 70px;
+    font-weight: bold;
+    border-radius: 3px;
+    align-items: center;
+    text-align: center;
+    margin: 5px 5px 2px 5px;
+    border: 1px solid silver;
+    cursor: pointer;
+
+}
+
+.list_item_chose p:nth-child(1) {
+    font-size: 40px;
+
+}
+
+.list_item_chose p:nth-child(2) {
+    font-weight: bold;
+}
+
+.list_item_chose p:nth-child(3) {
     color: red;
 
 }
@@ -369,5 +399,9 @@ ul.horizontal_list li:not(:last-child)::after {
 }
 .highlight_item p:nth-child(2) {
     color: white;
+}
+
+.hidden {
+    display: none;
 }
 

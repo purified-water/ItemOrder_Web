@@ -151,24 +151,104 @@ function inputValidation() {
 
 }
 
+// function selectAddProduct() {
+//     const itemsAdd = document.querySelectorAll('.list_item');
+//     const addButton = document.getElementById('add');
+//     const addedList = document.querySelector('.list_container_selected');
+//     const addAllButton = document.getElementById('addAll');
+
+//     itemsAdd.forEach(item =>{
+//         item.addEventListener("click", ()=> {
+//             item.classList.toggle('highlight_item')
+//             console.log(item);
+//         })
+//     })
+//     addButton.addEventListener("click", () => {
+//         itemsAdd.forEach(item =>{
+//             if(item.classList.contains('highlight_item')) {
+//                 item.classList.remove('list_item', 'highlight_item');
+//                 item.classList.add('list_item_chose');
+//                 addedList.appendChild(item);
+//             }
+//         })
+//     })
+
+//     addAllButton.addEventListener("click", () => {
+//         itemsAdd.forEach(item =>{
+
+//             item.classList.remove('list_item','highlight_item');
+//             item.classList.add('list_item_chose');
+//             addedList.appendChild(item);
+
+//         })
+//     })
+
+//     removeProduct()
+
+// }
+// function removeProduct() {
+//     const itemsAdd = document.querySelectorAll('.list_item_chose');
+
+//     const returnList = document.querySelector('.list_container');
+//     const putBackButton = document.getElementById('putBack');
+//     const putBackAllButton = document.getElementById('putBackAll');
+
+    
+//     itemsAdd.forEach(item =>{
+//         item.addEventListener("click", ()=> {
+
+//             console.log(item.parentNode)
+//             item.classList.toggle('highlight_item');
+
+//             console.log(item);
+//         })
+//     })
+//     putBackButton.addEventListener("click", () => {
+//         itemsAdd.forEach(item =>{
+            
+//             if(item.classList.contains('highlight_item')) {
+//                 item.classList.remove('list_item_chose', 'highlight_item');
+//                 item.classList.add('list_item');
+
+//                 returnList.appendChild(item);
+//             }
+//         })
+//     })
+
+//     putBackAllButton.addEventListener("click", () => {
+//         itemsAdd.forEach(item =>{
+//             returnList.appendChild(item);
+//             item.classList.remove('list_item_chose', 'highlight_item');
+//             item.classList.add('list_item');
+
+//             returnList.appendChild(item);
+
+//         })
+//     })
+// }
+
 function selectAddProduct() {
-    const itemsAdd = document.querySelectorAll('.list_container .list_item');
+    const itemsAdd = document.querySelectorAll('.list_item');
     const addButton = document.getElementById('add');
     const addedList = document.querySelector('.list_container_selected');
     const addAllButton = document.getElementById('addAll');
 
+    //Select
     itemsAdd.forEach(item =>{
         item.addEventListener("click", ()=> {
             item.classList.toggle('highlight_item')
-            item.classList.toggle('adding')
             console.log(item);
         })
     })
+
+
     addButton.addEventListener("click", () => {
         itemsAdd.forEach(item =>{
-            if(item.classList.contains('adding')) {
-                addedList.appendChild(item);
-                item.classList.remove('highlight_item', 'adding');
+            if(item.classList.contains('highlight_item')) {
+                item.classList.remove('list_item', 'highlight_item');
+                item.classList.add('list_item_chose');
+                addedList.appendChild(item.cloneNode(true));
+                item.remove();
             }
         })
     })
@@ -176,8 +256,9 @@ function selectAddProduct() {
     addAllButton.addEventListener("click", () => {
         itemsAdd.forEach(item =>{
 
+            item.classList.remove('list_item','highlight_item');
+            item.classList.add('list_item_chose');
             addedList.appendChild(item);
-            item.classList.remove('highlight_item', 'adding');
 
         })
     })
@@ -186,34 +267,111 @@ function selectAddProduct() {
 
 }
 function removeProduct() {
-    const itemsAdd = document.querySelectorAll('.list_container_selected .list_item');
+    const itemsAdd = document.querySelectorAll('.list_item_chose');
+
     const returnList = document.querySelector('.list_container');
     const putBackButton = document.getElementById('putBack');
     const putBackAllButton = document.getElementById('putBackAll');
+
     
     itemsAdd.forEach(item =>{
         item.addEventListener("click", ()=> {
-            item.classList.toggle('highlight_item')
-            item.classList.toggle('removing')
-            item.classList.remove('adding');
+
+            console.log(item.parentNode)
+            item.classList.toggle('highlight_item');
+
             console.log(item);
         })
     })
     putBackButton.addEventListener("click", () => {
         itemsAdd.forEach(item =>{
-            if(item.classList.contains('removing')) {
-                returnList.appendChild(item);
-                item.classList.remove('highlight_item', 'removing');
+            
+            if(item.classList.contains('highlight_item')) {
+                item.classList.remove('list_item_chose', 'highlight_item');
+                item.classList.add('list_item');
+
+                returnList.appendChild(item.cloneNode(true));
+                item.remove();
+
             }
         })
     })
 
     putBackAllButton.addEventListener("click", () => {
         itemsAdd.forEach(item =>{
+            returnList.appendChild(item);
+            item.classList.remove('list_item_chose', 'highlight_item');
+            item.classList.add('list_item');
 
             returnList.appendChild(item);
-            item.classList.remove('highlight_item', 'removing');
 
+        })
+    })
+}
+
+//Side function
+function hideNewsContent() {
+    const showingButtons = document.querySelectorAll('.expanding');
+
+    showingButtons.forEach(button => {
+        button.addEventListener("click", () =>{
+            console.log(button.parentNode)
+            
+            //Get the news data
+            const content = button.closest(".side_item");
+            const data = content.querySelector(".news_data");
+            
+            button.parentNode.classList.toggle('hidden_bar');
+            //delete the expanded to hide
+            button.parentNode.classList.remove('expanded');
+            
+            
+
+            if (!button.parentNode.classList.contains('hidden_bar')) {
+                button.parentNode.classList.add('expanded');
+                button.innerText="⬇"
+
+
+            } else {
+                button.innerText="▶"
+            }
+        
+
+            //Remove the hidden tag
+            data.classList.toggle('hidden');
+        })
+    })
+}
+
+function showNewsContent() {
+    const hidingButtons = document.querySelectorAll('.hiding');
+
+    hidingButtons.forEach(button => {
+        button.addEventListener("click", () =>{
+            console.log(button.parentNode)
+            
+            //Get the news data
+            const content = button.closest(".side_item");
+            const data = content.querySelector(".news_data");
+            
+            //toggle expanded
+            button.parentNode.classList.toggle('expanded');
+            //if expanded then remove hidden
+            data.classList.remove('hidden');
+
+            //If not currently expanded then hide content
+            if (!button.parentNode.classList.contains('expanded')) {
+                data.classList.add('hidden');
+                button.innerText="▶"
+
+
+            } else {
+                button.innerText="⬇"
+
+            }
+            
+            
+            
         })
     })
 }
@@ -221,3 +379,5 @@ function removeProduct() {
 
 inputValidation();
 selectAddProduct();
+hideNewsContent();
+showNewsContent();
