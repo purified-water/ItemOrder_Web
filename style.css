@@ -150,7 +150,8 @@ li {
 .form_container {
     display: grid;
     grid-template-columns: 150px 400px;
-    grid-template-rows: repeat(6, 25px);
+    grid-template-rows: auto;
+    row-gap: 5px;
 
     height: fit-content;
 
@@ -214,6 +215,7 @@ li {
     text-align: center;
     margin: 5px 5px 2px 5px;
     border: 1px solid silver;
+    cursor: pointer;
 
 }
 
@@ -250,6 +252,7 @@ label {
 input[type="text"] {
     margin-left: 5px;
     height: 20px;
+    width: 100%;
 
 }
 input[type="date"] {
@@ -345,3 +348,26 @@ ul.horizontal_list li:not(:last-child)::after {
     margin-left: 10px;
     text-decoration: none;
 }
+
+
+
+.input_error {
+    color: orange;
+}
+
+.highlight {
+    border: 1px solid orange;
+}
+
+.highlight_radio {
+    outline: 1px solid orange;
+}
+
+.highlight_item {
+    background-color: orange;
+
+}
+.highlight_item p:nth-child(2) {
+    color: white;
+}
+

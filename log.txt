@@ -1,5 +1,0 @@
-commit 4ab839de025874cf93a7b3e54715a666102367f5
-Author: “purified-water” <julianng1110@gmail.com>
-Date:   Sat Oct 7 23:41:38 2023 +0700
-
-    Added initial layout, missing orderlist, news list and footer

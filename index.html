@@ -77,14 +77,24 @@
                     <div class="form_container">
 
                         <label for="inName">Họ và tên:</label>
-                        <input type="text" id="inName" name="inName">
+                        <div>
+                            <input type="text" id="inName" name="input">
+                            <span class="input_error" id="name_error"></span>
+                        </div>
+                        
     
     
                         <label for="inAddress">Địa chỉ:</label>
-                        <input type="text" id="inAddress" name="inAddress">
+                        <div>
+                            <input type="text" id="inAddress" name="input">
+                            <span class="input_error" id="address_error"></span>
+                        </div>
             
                         <label for="inPhone">Điện thoại:</label>
-                        <input type="text" id="inPhone" name="inPhone">
+                        <div>
+                            <input type="text" id="inPhone" name="input">
+                            <span class="input_error" id="phone_error"></span>
+                        </div>
     
                         <label>Giới tính:</label>
                         
@@ -93,13 +103,22 @@
                             <label for="male">Nam</label>
                             <input type="radio" id="female" value="female" name="sex">
                             <label for="female">Nữ</label>
+                            <br>
+                            <span class="input_error" id="sex_error"></span>
                         </div>
                         <label for="inDate">Ngày giao hàng:</label>
-                        <input type="date" id="inDate" name="inDate">
+                        <div>
+                            <input type="date" id="inDate" name="input">
+                            <br>
+                            <span class="input_error" id="date_error"></span>
+                        </div>
                 
     
                         <label for="inEmail">Email:</label>
-                        <input type="text" id="inEmail" name="inEmail">
+                        <div>
+                            <input type="text" id="inEmail" name="input">
+                            <span class="input_error" id="email_error"></span>
+                        </div>
     
                         
     
