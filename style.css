@@ -513,3 +513,7 @@ ul.horizontal_list li a:active{
     display: none;
 }
 
+.thumb {
+    opacity: 70%;
+}
+

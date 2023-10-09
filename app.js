@@ -145,6 +145,8 @@ function inputValidation() {
             return;
         }
 
+        return isValid;
+
     })
 
     
@@ -152,6 +154,7 @@ function inputValidation() {
 }
 
 // function selectAddProduct() {
+
 //     const itemsAdd = document.querySelectorAll('.list_item');
 //     const addButton = document.getElementById('add');
 //     const addedList = document.querySelector('.list_container_selected');
@@ -227,89 +230,231 @@ function inputValidation() {
 //     })
 // }
 
-function selectAddProduct() {
-    const itemsAdd = document.querySelectorAll('.list_item');
-    const addButton = document.getElementById('add');
-    const addedList = document.querySelector('.list_container_selected');
-    const addAllButton = document.getElementById('addAll');
 
-    //Select
-    itemsAdd.forEach(item =>{
-        item.addEventListener("click", ()=> {
-            item.classList.toggle('highlight_item')
-            console.log(item);
-        })
-    })
+// function chooseItem(listClassName) {
+//     const itemsAdd = document.querySelectorAll(listClassName);
+//     itemsAdd.forEach(item =>{
+//         item.addEventListener("click", ()=> {
+//             if (!item.classList.contains('highlight_item')) {
+//                 item.classList.add('highlight_item')
+
+//             } else {
+//                 item.classList.remove('highlight_item');
+
+//             }
+//             console.log(item);
+//         })
+//     })
+
+// }
 
 
-    addButton.addEventListener("click", () => {
-        itemsAdd.forEach(item =>{
-            if(item.classList.contains('highlight_item')) {
-                item.classList.remove('list_item', 'highlight_item');
-                item.classList.add('list_item_chose');
-                addedList.appendChild(item.cloneNode(true));
-                item.remove();
-            }
-        })
-    })
+// function selectAddProduct() {
+//     // const itemsAdd = document.querySelectorAll('.list_item');
+//     const addedList = document.querySelector('.list_container_selected');
+    
+    
+//     const addButton = document.getElementById('add');
+//     const addAllButton = document.getElementById('addAll');
+    
+//     chooseItem('.list_item');
 
-    addAllButton.addEventListener("click", () => {
-        itemsAdd.forEach(item =>{
+//     //Select
+//     // itemsAdd.forEach(item =>{
+//     //     item.addEventListener("click", ()=> {
+//     //         if (!item.classList.contains('highlight_item')) {
+//     //             item.classList.add('highlight_item')
 
-            item.classList.remove('list_item','highlight_item');
-            item.classList.add('list_item_chose');
-            addedList.appendChild(item);
+//     //         } else {
+//     //             item.classList.remove('highlight_item');
 
-        })
-    })
+//     //         }
+//     //         console.log(item);
+//     //     })
+//     // })
 
-    removeProduct()
+//     addButton.addEventListener("click", () => {
+//         const addingItems = document.querySelectorAll(".list_item.highlight_item");
+//         console.log(addingItems)
 
-}
-function removeProduct() {
-    const itemsAdd = document.querySelectorAll('.list_item_chose');
+//         addingItems.forEach(item =>{
+            
+//             item.classList.add('selected');
+            
+//             item.classList.remove('highlight_item');
 
-    const returnList = document.querySelector('.list_container');
-    const putBackButton = document.getElementById('putBack');
-    const putBackAllButton = document.getElementById('putBackAll');
+
+//             addedList.appendChild(item.cloneNode(true));
+//             item.remove();
+//         })
+//     })
+
+//     // addAllButton.addEventListener("click", () => {
+//     //     itemsAdd.forEach(item =>{
+
+//     //         item.classList.remove('list_item','highlight_item');
+//     //         item.classList.add('list_item_chose');
+//     //         addedList.appendChild(item);
+
+//     //     })
+//     // })
+
+//     const returnList = document.querySelector('.list_container');
+//     const putBackButton = document.getElementById('putBack');
+//     const putBackAllButton = document.getElementById('putBackAll');
+//     // console.log(itemsAdd)
+
+//     putBackButton.addEventListener("click", () => {
+
+//         const removingItems = document.querySelectorAll('.list_item.highlight_item');
+//         console.log(document.querySelectorAll('.list_item.selected'))
+//         removingItems.forEach(item =>{
+    
+//             item.classList.remove('highlight_item');
+//             item.classList.remove('selected');
+//             // item.classList.add('list_item');
+
+//             returnList.appendChild(item.cloneNode(true));
+//             item.remove();
+
+//         })
+//     })
+
+//     // putBackAllButton.addEventListener("click", () => {
+//     //     itemsAdd.forEach(item =>{
+//     //         returnList.appendChild(item);
+//     //         item.classList.remove('list_item_chose', 'highlight_item');
+//     //         item.classList.add('list_item');
+
+//     //         returnList.appendChild(item);
+
+//     //     })
+//     // })
 
     
-    itemsAdd.forEach(item =>{
-        item.addEventListener("click", ()=> {
 
-            console.log(item.parentNode)
-            item.classList.toggle('highlight_item');
+// }
+// function removeProduct() {
+//     const itemsRemove = document.querySelectorAll('.list_item');
 
-            console.log(item);
-        })
-    })
-    putBackButton.addEventListener("click", () => {
-        itemsAdd.forEach(item =>{
+    
+
+//     chooseItem('.list_item');
+
+    
+//     // itemsAdd.forEach(item =>{
+//     //     item.addEventListener("click", ()=> {
+
+//     //         console.log(item.parentNode)
+//     //         item.classList.toggle('highlight_item');
+
+//     //         console.log(item);
+//     //     })
+//     // })
+//     const returnList = document.querySelector('.list_container');
+//     const putBackButton = document.getElementById('putBack');
+//     const putBackAllButton = document.getElementById('putBackAll');
+//     console.log(itemsAdd)
+
+//     putBackButton.addEventListener("click", () => {
+
+//         const removingItems = document.querySelectorAll('.list_item_chose.highlight_item');
+//         removingItems.forEach(item =>{
             
-            if(item.classList.contains('highlight_item')) {
-                item.classList.remove('list_item_chose', 'highlight_item');
-                item.classList.add('list_item');
 
-                returnList.appendChild(item.cloneNode(true));
-                item.remove();
+//             item.classList.remove('highlight_item');
+//             item.classList.remove('selected');
+//             // item.classList.add('list_item');
 
-            }
-        })
-    })
+//             returnList.appendChild(item.cloneNode(true));
+//             item.remove();
 
-    putBackAllButton.addEventListener("click", () => {
-        itemsAdd.forEach(item =>{
-            returnList.appendChild(item);
-            item.classList.remove('list_item_chose', 'highlight_item');
-            item.classList.add('list_item');
+//         })
+//     })
 
-            returnList.appendChild(item);
+//     putBackAllButton.addEventListener("click", () => {
+//         itemsAdd.forEach(item =>{
+//             returnList.appendChild(item);
+//             item.classList.remove('list_item_chose', 'highlight_item');
+//             item.classList.add('list_item');
 
-        })
-    })
-}
+//             returnList.appendChild(item);
+
+//         })
+//     })
+// }
 
 //Side function
+
+
+function selectItem(item) {
+    item.classList.toggle('highlight_item');
+
+    
+}
+
+
+function addAndDelete() {
+    const addButton = document.getElementById('add');
+    const removeButton = document.getElementById('putBack');
+
+    const items = document.querySelectorAll('.list_item')
+    items.forEach(item =>{
+        //Chon
+        item.addEventListener("click", () => {
+            selectItem(item);
+
+            addButton.addEventListener("click", () => {
+                addSelected();
+            })
+        
+            selectItem();
+        
+            removeButton.addEventListener("click", () => {
+                removeSelected();
+            })
+        
+        })
+    })
+    
+    
+
+
+
+
+}
+
+function addSelected() {
+    const selected = document.querySelectorAll('.list_item.highlight_item');
+    const chosedList = document.querySelector('.list_container_selected')
+
+    selected.forEach((item) => {
+        item.classList.remove('highlight_item');
+        item.classList.add('selected');
+
+        chosedList.appendChild(item.cloneNode(true));
+        item.remove();
+
+       
+
+    });
+   
+}
+
+function removeSelected() {
+    const selected = document.querySelectorAll('.list_item.highlight_item');
+    const returnList = document.querySelector('.list_container')
+
+    selected.forEach((item) => {
+        item.classList.remove('highlight_item');
+        item.classList.remove('selected');
+
+        returnList.appendChild(item.cloneNode(true));
+        item.remove();
+    });
+}
+
+
 function hideNewsContent() {
     const showingButtons = document.querySelectorAll('.expanding');
 
@@ -376,8 +521,75 @@ function showNewsContent() {
     })
 }
 
+let selectedNews;
+function dragNews() {
+    const allNews = document.querySelectorAll('.side_item');
+
+    allNews.forEach((news) => {
+        news.setAttribute('draggable', true);
+    })
+    window.onload = function() {
+        allNews.forEach(news => {
+            news.addEventListener('dragstart', onDragStart);
+            news.addEventListener('dragover', onDragOver);
+            news.addEventListener('dragend', onDragEnd);
+            news.addEventListener('drop', onDragDrop);
+
+        })
+    }
+}
+
+
+function onDragStart(e) {
+    console.log(e.target);
+    selectedNews = e.target;
+}
+
+function onDragOver(e) {
+    e.preventDefault();
+    if (selectedNews !== e.target) {
+        selectedNews.classList.add('thumb');
+    }
+}
+
+function onDragEnd(e) {
+    e.target.classList.remove('thumb');
+    selectedNews.classList.remove('thumb');
+}
+function isValidDropNews(target, selectedNews) {
+    return (target.classList.contains('side_item') || target.parentNode.classList.contains('side_item_header')
+    || target.parentNode.classList.contains('side_item')) && target !== selectedNews;
+
+}
+
+function onDragDrop(e) {
+    const parentNodeNews = document.querySelector('.side');
+    // e.preventDefault()
+    console.log(e.target)
+
+    let targetNode = e.target;
+    while (true) {
+        //If not the side item selected
+        if (!targetNode.classList.contains('side_item')) {
+            //Get the parentnode until meet side_item
+            targetNode = targetNode.parentNode;
+        } else {
+            break;
+        }
+    }
+    
+    if (isValidDropNews(targetNode, selectedNews)) {
+        targetNode.parentNode.insertBefore(selectedNews, targetNode);
+
+    }
+}
 
 inputValidation();
-selectAddProduct();
+// selectAddProduct();
+// // removeProduct();
+addAndDelete();
+
+
+dragNews();
 hideNewsContent();
 showNewsContent();
