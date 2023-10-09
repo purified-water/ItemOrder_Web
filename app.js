@@ -389,33 +389,33 @@ function inputValidation() {
 
 function selectItem(item) {
     item.classList.toggle('highlight_item');
-
-    
 }
 
 
 function addAndDelete() {
     const addButton = document.getElementById('add');
+    const addAllButton = document.getElementById('addAll');
     const removeButton = document.getElementById('putBack');
+    const removeAllButton = document.getElementById('putBackAll');
 
-    const items = document.querySelectorAll('.list_item')
-    items.forEach(item =>{
-        //Chon
-        item.addEventListener("click", () => {
-            selectItem(item);
-
-            addButton.addEventListener("click", () => {
-                addSelected();
-            })
-        
-            selectItem();
-        
-            removeButton.addEventListener("click", () => {
-                removeSelected();
-            })
-        
-        })
+    
+    addButton.addEventListener("click", () => {
+        addSelected();
     })
+
+    removeButton.addEventListener("click", () => {
+        removeSelected();
+    })
+
+    addAllButton.addEventListener("click", ()=> {
+        addAllList();
+    })
+
+    removeAllButton.addEventListener("click", () => {
+        removeAllList();
+    })
+
+
     
     
 
@@ -451,6 +451,36 @@ function removeSelected() {
 
         returnList.appendChild(item.cloneNode(true));
         item.remove();
+    });
+}
+
+function addAllList() {
+    const selected = document.querySelectorAll('.list_container .list_item');
+    const chosedList = document.querySelector('.list_container_selected')
+
+    selected.forEach((item) => {
+        item.classList.add('selected');
+
+        chosedList.appendChild(item.cloneNode(true));
+        item.remove();
+
+       
+
+    });
+}
+
+function removeAllList() {
+    const selected = document.querySelectorAll('.list_container_selected .list_item');
+    const returnList = document.querySelector('.list_container')
+
+    selected.forEach((item) => {
+        item.classList.remove('selected');
+
+        returnList.appendChild(item.cloneNode(true));
+        item.remove();
+
+       
+
     });
 }
 
@@ -563,7 +593,6 @@ function isValidDropNews(target, selectedNews) {
 }
 
 function onDragDrop(e) {
-    const parentNodeNews = document.querySelector('.side');
     // e.preventDefault()
     console.log(e.target)
 
