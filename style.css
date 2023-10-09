@@ -2,6 +2,7 @@
     box-sizing: border-box;
     font-family: 'Times New Roman', Times, serif;
 }
+
 body {
     margin: 0;
     padding: 0;
@@ -13,17 +14,13 @@ body {
 
 .layout {
     display: flex;
-    width: 1200px;
+    /* width: 1200px; */
+    max-width: 1200px;
     height: 100%;
     flex-wrap: wrap;
     /* z-index: -100; */
 }
-.container {
-    display: flex;
-    width: fit-content;
-    height: fit-content;
-    justify-content: center;
-}
+
 .header_container {
     display: flex;
     justify-content: center;
@@ -366,6 +363,7 @@ input[type="date"] {
 }
 
 input[type="button"] {
+    cursor: pointer;
     text-align: center;
     width: 35px;
     color: rgb(104, 41, 162);
@@ -377,6 +375,7 @@ input[type="button"] {
 }
 
 input[type="submit"] {
+    cursor: pointer;
     text-align: center;
     color: rgb(104, 41, 162);
     width: 70px;
@@ -490,7 +489,7 @@ ul.horizontal_list li a:focus{
 
 
 .input_error {
-    color: orange;
+    color: rgb(255, 77, 0);
 }
 
 .highlight {

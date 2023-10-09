@@ -1,0 +1,136 @@
+@media screen and (max-width: 768px) and (min-width: 700px){
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .layout {
+        width: 768px;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    
+    .header_container {
+        width: 100%;
+    }
+    .header {
+        padding: 10px;
+        border-radius: 4px;
+        box-shadow: 2px 2px 8px #8e8e8e;
+        text-align: center;
+    }
+    
+    .header_title {
+        font-size: 24px;
+    }
+    
+    .nav {
+        width: 60%;
+
+        box-shadow: 2px 2px 8px #8e8e8e;
+        text-align: center;
+    }
+
+    
+    
+    .side {
+        width: 100vw;
+        margin: 10px;
+        border-top: 1px solid rgba(64, 113, 238, 0.911);
+        padding: 10px;
+        box-sizing: border-box;
+        
+    }
+    
+    .side_item {
+
+        margin: 5px;
+    }
+    
+    .main {
+        width: 100%;
+        border-top: 1px solid rgba(64, 113, 238, 0.911);
+        border-left: 0.5px solid rgba(64, 113, 238, 0.911);
+        margin-bottom: 5px;
+    }
+  
+    .main_header {
+        margin-top: 10px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid silver;
+        text-align: center;
+    }
+    
+    .main_title {
+        font-size: 20px;
+    }
+    
+    .form_container{
+        padding-right: 10px;
+
+    }
+
+    .outer_list_container {
+        width: 100%;
+        grid-template-columns: 300px 55px 300px;
+        grid-template-rows: 5% 85% 10%;
+        
+    }
+    .list_container {
+    
+        width: 300px;
+        height: 100%;
+    
+        overflow: hidden;
+        overflow-y: auto;
+        border: 1px solid silver;
+        /* margin-left: 20px; */
+    }
+    .list_container_selected {
+    
+        width: 300px;
+        height: 100%;
+    
+        overflow: hidden;
+        overflow-y: auto;
+        border: 1px solid #e87d62;
+        background-color: aliceblue;
+    
+        /* margin-left: 20px; */
+    }
+    
+    table {
+        width: 100%;
+    }
+    
+    .footer_container {
+        border-top: 1px solid rgb(98, 137, 255);
+        margin-top: 20px;
+    }
+    
+    .footer {
+        padding: 10px;
+        text-align: center;
+    }
+    
+    ul.horizontal_list {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        text-align: center;
+    }
+    
+    ul.horizontal_list li {
+        display: inline-block;
+        margin-right: 10px;
+    }
+    
+    .thumb {
+        opacity: 0.7;
+    }
+    
+    
+}

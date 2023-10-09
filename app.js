@@ -96,8 +96,8 @@ function inputValidation() {
     const inputD = new Date(dateInput.value)
     const curDate = new Date();
 
-    console.log(dateInput);
-    console.log(curDate);
+    //(dateInput);
+    //(curDate);
     if (dateInput.value.trim() === '') {
         document.getElementById('inDate').classList.add('highlight');
         document.getElementById('date_error').innerText = "*Ngày giao hàng chưa được điền";
@@ -146,9 +146,9 @@ function formatDate(dateInput) {
         let month = selectedDate.getMonth() + 1;
         let year = selectedDate.getFullYear();
 
-        console.log(day);
-        console.log(month);
-        console.log(year);
+        //(day);
+        //(month);
+        //(year);
 
         //Ensure day and month are displayed with leading zeros if needed
         let formattedDay = (day < 10) ? "0" + day : day;
@@ -192,7 +192,7 @@ function addNewData() {
     const formattedDate = formatDate(date);
 
     const orderedList = getOrderedList();
-    console.log(orderedList);
+    //(orderedList);
     if(orderedList.length === 0) {
         return;
     }
@@ -200,8 +200,8 @@ function addNewData() {
     const table = document.getElementsByClassName('table')[0];
     const tableBody = table.querySelector('tbody');
 
-    console.log('Date', formattedDate)
-    console.log('Gend', sex);
+    //('Date', formattedDate)
+    //('Gend', sex);
 
     var newRow = document.createElement("tr");
     //Init row data
@@ -243,7 +243,7 @@ function deleteAllOrder() {
 
 
     removeAllOrderBtn.addEventListener("click", () =>{
-        console.log('table', orderTable);
+        //('table', orderTable);
         tableBody.forEach(row => {
             row.remove();
         })
@@ -362,7 +362,7 @@ function hideNewsContent() {
 
     showingButtons.forEach(button => {
         button.addEventListener("click", () =>{
-            console.log(button.parentNode)
+            //(button.parentNode)
             
             //Get the news data
             const content = button.closest(".side_item");
@@ -395,7 +395,7 @@ function showNewsContent() {
 
     hidingButtons.forEach(button => {
         button.addEventListener("click", () =>{
-            console.log(button.parentNode)
+            //(button.parentNode)
             
             //Get the news data
             const content = button.closest(".side_item");
@@ -429,20 +429,20 @@ function dragNews() {
     allNews.forEach((news) => {
         news.setAttribute('draggable', true);
     })
-    window.onload = function() {
-        allNews.forEach(news => {
-            news.addEventListener('dragstart', onDragStart);
-            news.addEventListener('dragover', onDragOver);
-            news.addEventListener('dragend', onDragEnd);
-            news.addEventListener('drop', onDragDrop);
 
-        })
-    }
+    allNews.forEach(news => {
+        news.addEventListener('dragstart', onDragStart);
+        news.addEventListener('dragover', onDragOver);
+        news.addEventListener('dragend', onDragEnd);
+        news.addEventListener('drop', onDragDrop);
+
+    })
+
 }
 
 
 function onDragStart(e) {
-    console.log(e.target);
+    //(e.target);
     selectedNews = e.target;
 }
 
@@ -465,7 +465,7 @@ function isValidDropNews(target, selectedNews) {
 
 function onDragDrop(e) {
     // e.preventDefault()
-    console.log(e.target)
+    //(e.target)
 
     let targetNode = e.target;
     while (true) {
@@ -491,22 +491,24 @@ function dragDropOrderItem() {
     itemList.forEach(item => {
         item.setAttribute('draggable',true);
     })
-    window.onload = function() {
-        itemList.forEach(item => {
-            item.addEventListener('dragstart', onDragStart2);
-            item.addEventListener('dragover', onDragOver2);
-            item.addEventListener('dragend', onDragEnd2);
-            item.addEventListener('drop', onDragDrop2);
 
-        })
-    }
-    console.log(itemList);
+    itemList.forEach(item => {
+        item.addEventListener('dragstart', onDragStart2);
+        item.addEventListener('dragover', onDragOver2);
+        item.addEventListener('dragend', onDragEnd2);
+        item.addEventListener('drop', onDragDrop2);
+
+    })
+
+
 }
 
 let selectedDragItem;
 function onDragStart2(e) {
     selectedDragItem = e.target;
-    console.log(e.target);
+    //(e.target);
+    selectedDragItem.classList.add('thumb');
+
 
 }
 
@@ -538,7 +540,7 @@ function onDragDrop2(e) {
         }
     }
 
-    console.log('targetNode', targetNode.parentNode)
+    //('targetNode', targetNode.parentNode)
     //Case move list_container to container_selected
     //No selected tag
     if (selectedDragItem.classList.contains('selected') === false
@@ -552,7 +554,7 @@ function onDragDrop2(e) {
 
         //Add to order list
         orderList.appendChild(selectedDragItem.cloneNode(true));
-        console.log('return', orderList)
+        //('return', orderList)
 
         selectedDragItem.remove();
     }
@@ -565,7 +567,7 @@ function onDragDrop2(e) {
 
         //Add to list
         list.appendChild(selectedDragItem.cloneNode(true));
-        console.log('order', list)
+        //('order', list)
         selectedDragItem.remove();
     }   
     e.preventDefault();
