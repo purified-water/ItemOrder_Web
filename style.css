@@ -415,7 +415,7 @@ tr {
 }
 
 
-tr:nth-child(odd):not(:first-child) {
+tr:nth-child(even) {
     background-color: rgb(255, 227, 172);
 }
 
@@ -481,7 +481,7 @@ ul.horizontal_list li a:hover{
     background-color: orange;
 
 }
-ul.horizontal_list li a:active{
+ul.horizontal_list li a:focus{
     color: rgb(255, 233, 193);
     background-color: orange;
 
